@@ -8,10 +8,8 @@ function StartMove() {
 }
 
 function HorzMoveBackGround () {
-	window.cssXPos=window.cssXPos+1;
-	if (window.cssXPos>=window.cssMaxWidth) {
-	window.cssXPos=0;
-	}
+	window.cssXPos=window.cssXPos+2;
+
 	toMove=document.getElementById("container");
 	toMove.style.backgroundPosition=window.cssXPos+"px 0px";
 
