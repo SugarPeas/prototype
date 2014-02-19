@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IOBoard Test Suite</title>
+    <meta charset="utf-8">
+    <link href="../../node_modules/mocha/mocha.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+
+    <div id="mocha"></div>
+
+    <!-- ** test framework ** -->
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script src="../../node_modules/chai/chai.js"></script>
+    <script src="../../node_modules/sinon/pkg/sinon.js"></script>
+    <script>
+      mocha.setup({
+        ui:       'bdd',
+        reporter: 'html'
+      });
+    </script>
+
+    <!-- common -->
+    <script src="../../src/utils/JSUTILS.js"></script>
+    <script src="../..//src/utils/Event.js"></script>
+    <script src="../../src/utils/EventDispatcher.js"></script>
+    <script src="../../src/core/PinEvent.js"></script>
+    <script src="../../src/core/Pin.js"></script>
+    <script src="../../src/core/IOBoardEvent.js"></script>
+    <script src="../../src/core/IOBoard.js"></script>
+    <script src="../../src/core/I2CBase.js"></script>
+
+    <!-- fixtures -->
+    <script src="fixtures/fixtures.js"></script>
+
+    <script src="../helpers/coreStubs.js"></script>
+
+    <!-- tests -->
+    <script src="unit/IOBoard.js"></script>
+    <script src="unit/Pin.js"></script>
+    <script src="unit/I2CBase.js"></script>
+
+    <script>
+        if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+        else { mocha.run(); }
+    </script>
+  </body>
+</html>

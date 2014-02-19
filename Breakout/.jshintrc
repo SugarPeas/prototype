@@ -1,0 +1,25 @@
+{
+    "asi"           : false,
+    "bitwise"       : false,
+    "boss"          : false,
+    "eqeqeq"        : false,
+    "eqnull"        : false,
+    "iterator"      : false,
+    "laxbreak"      : false,
+    "laxcomma"      : false,
+    "loopfunc"      : false,
+    "plusplus"      : false,
+    "proto"         : false,
+    "shadow"        : false,
+    "smarttabs"     : false,
+    "strict"        : false,
+    "sub"           : false,    
+    "trailing"      : false,
+    "indent"        : 4,
+    "globals": {
+        "BO": true,
+        "JSUTILS": true,
+        "MozWebSocket": false,
+        "io": false
+    }
+}

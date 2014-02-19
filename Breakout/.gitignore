@@ -1,0 +1,9 @@
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+dist/*.zip
+
+# dependencies
+node_modules
+node_server/node_modules/

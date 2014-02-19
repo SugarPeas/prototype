@@ -1,0 +1,132 @@
+2013.07.27 Version 0.3.0
+* Updated all examples to include socket.io client library.
+* Added BiColorLED and updated bi_color_led.html example contributed by fabaff
+* Updated jquery and jquery-ui and removed version number from file names and
+  references in examples.
+* Switched to YUI docs.
+* Now using grunt for build.
+* Added pin modes for ONEWIRE and STEPPER.
+* Added ability to set pin mode without sending set pin mode command to Firmata.
+* Updated stepper.js to not send set pin mode command to Firmata.
+
+2013.05.12 Version 0.2.3
+* Changed temperature.html example to use TMP36 sensor instead of LM335 sensor.
+* Created new repo for BreakoutServer source and removed BreakoutServer source
+  from Breakout/server/
+* Reduced startup delay by 300ms.
+* Updated Breakout Server to send entire serial buffer instead of byte by byte.
+* Added defaut path for node_server.
+* Updated node_server for better performance.
+* Updated IOBoard to handle incoming array of data in addition to individual
+  strings.
+
+2013.03.18 Version 0.2.2
+* Fixed bug in Breakout Server that was preventing selection of serial port 
+  other than top port in dropdown list.
+
+2013.02.18 Version 0.2.1
+* Applications using custom firmware should now listen for the IOBoard.READY
+  event rather than the IOBoard.CONNECTED event. Custom firmware can now
+  also handle a Firmata SYSTEM_RESET callback. See Breakout/custome_examples/.
+* System reset is now called before capability query when starting in single
+  client mode.
+* Removed string_test.html from custom_examples and added simple_json.html 
+  example and corresponding skecth (see customm_examples/sketches/.
+* Fixed bug that was setting optional i2c delay time incorrectly.
+* Added ability to open examples directly in browser (closes issue #28)
+* Added removeFilter method to Pin (closes issue #15)
+* Updated firmware.html example to use updated getPinCapabilities method.
+* Updated IOBoard.reportCapabilities to print in easier to read format.
+* Changed IOBoard.getPinCapabilities to store pin modes as objects rather than arrays.
+* Auto run tests in build process.
+* Added unit tests for IOBoard, Pin and I2CBase (see test/core/).
+* Added getAnalogPinCount() to IOBoard to return the number of analog pins
+  supported by the IOBoard.
+* Updated processQueryFirmwareResult to set the firmware name string correctly.
+* Added missing constructor definition to prototype.
+* Refactored IOBoard to move all methods to prototype.
+* Added state property to Pin object to get state from pinStateQuery response.
+* Fixed bug in pin state response that was preventing querying multiple pins.
+
+2012.11.24 Version 0.2.0
+* Updated Breakout Server to v0.2.0
+* Restructured server directory
+* Default webserver root is now ../../
+* Added Breakout Server eclipse archive to server directory
+* Created separate 32 bit and 64 bit Breakout Server builds for Windows (issue #9)
+* Added getPins method ot IOBoard to return array of all Pin objects
+* Made queryPinState a public method (issue #25)
+* Using AdvancedFirmata instead of StandardFirmata
+* Added stepper motor I/O object and examples (issue #24)
+* Updated schematics to add stepper motor examples
+* Updated examples index to include stepper examples
+* Fixed convolution filter bug (issue #31)
+* Updated processing_js examples to use processing.js version 1.4.1
+* Updated three_js examples to use three.js revision 52
+
+2012.09.15 Version 0.1.7
+* jsdocs are now generated as part of build process
+* Added index page for examples: /examples/index.html (initial idea by Fabian Affolter)
+* Added additional getting_started examples (contributed by Fabian Affolter)
+* Included SignalScope.js in the core library under src/utils/
+* Added getFirmwareName() and getPinCapabilities() methods to IOBoard.js 
+  (contributed by Fabian Affolter)
+* Added command line arguments to nodeJS server (contributed by Fabian Affolter)
+* Removed useSocketIO parameter from IOBoard and WSocketWrapper. If you include 
+  socket.io, it is now assumed you are using the nodeJS server.
+* Changed default port for nodeJS server from 8080 to 8887
+* Updated nodeJS server to use express framework
+* Enabled touch events for jQuery UI elements
+
+2012.07.18 Version 0.1.6
+* Added examples demonstrating use of DeviceMotion and DeviceOrientation APIs 
+  with Breakout
+* Added fritzing files to Breakout/examples/schematics_src/fritzing/
+* Updated examples to be more mobile friendly
+* Added simple_led and analog_input examples (contributed by Fabian Affolter)
+* Updated schematics.pdf to include analog_input example
+* Fixed issued in processingJS accelerometer example
+
+2012.06.30 Version 0.1.5
+* Added example for Arduino Leonardo board
+* Added Leonardo wiring diagram to schematics.pdf
+* Added build script to minify files
+
+2012.04.14 Version 0.1.4
+* Fixed LED and RGBLED fadeTo issue (issue #8)
+* Fixed Pin / Button bug that was causing pins on same port to trigger false 
+  events (issue #14)
+* Added DISCONNECTED event to IOBoardEvent that is fired when the server is 
+  disconnected (issue #12)
+
+2012.03.31 Version 0.1.3
+* Min, max and average pin values are now calculated after any filters are 
+  applied (issue #11).
+* Common Anode RGB LEDs now work properly (issue #8)
+* Changed R, G, and B pins in rgb_led example to match pins in the schematics.pdf 
+  document (issue #10).
+* Fixed dcmotor example (issue #9)
+* Fixed LED toggle (issue #7)
+* Created new hello_world example to better demonstrate basic input and output.
+* Added a template example that can be used as a starting point for new projects.
+* Added basic processing_js example and templates for starting new 2d and 3d 
+  processing_js projects with Breakout.
+* Added examples of flex, FSR (pressure), IR proximity, temperature and sonar sensors.
+* Updated schematics to add new sensor examples and dcmotor with external power supply.
+
+2012.03.20 Version 0.1.2
+* Updated for Firefox 11 compatibility
+* Updated readme
+
+2012.03.12 Version 0.1.1
+* Fixed jQuery library mismatch for custom_examples (issue #2)
+* Fixed serial port selection issue in Breakout Server (issue #3)
+* Fixed ability to use scaler equations in Scaler.js (issue #4)
+* Updated actuator, filter and generator examples to use in-browser controls
+* Added signal viewer (SignalScope.js) to filter and generator examples
+* Updated documentation
+* Updated schematics
+* Updated readme
+
+2012.02.20 Version 0.1.0
+* First public beta
