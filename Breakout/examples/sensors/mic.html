@@ -32,6 +32,7 @@
         var IOBoardEvent = BO.IOBoardEvent;
         var AnalogAccelerometer = BO.io.AnalogAccelerometer;
         var AccelerometerEvent = BO.io.AccelerometerEvent;
+        var mic = BO.io.mic;
 
         // Set to true to print debug messages to console
         BO.enableDebugging = true;  
@@ -64,6 +65,8 @@
                                     RANGE_GS,
                                     true);
 
+            var whatever = new Ana
+
             // Use calibrate_accelerometer.html to obtain the min and max voltage values
             // to supply to the getCalibratedRange method below.
 
@@ -83,20 +86,11 @@
         
         function onAccelerationUpdate(event) {
             var accel = event.target;
-           if(accel.x.toFixed(3) > 1){
-                moveUp();
-            }else if(accel.x.toFixed(3) < 0){
-                moveDown();
-            }
-
-            /*
-            if(accel.y.toFixed(3) > 1){
+            if(accel.x.toFixed(3) > 1){
                 moveRight();
-            }else if(accel.y.toFixed(3) < 0){
+            }else if(accel.x.toFixed(3) < 0){
                 moveLeft();
             }
-            */
-
            /* $('#xVal').html("x = " + accel.x.toFixed(3));
             $('#yVal').html("y = " + accel.y.toFixed(3));
             $('#zVal').html("z = " + accel.z.toFixed(3));
@@ -110,28 +104,13 @@
             cssBGImage.src="city.jpg";
 
             window.cssMaxWidth=cssBGImage.width;
-            window.cssYPos=0;
             window.cssXPos=0;
         }
 
-        function moveUp () {
-            window.cssYPos=window.cssYPos-2;
-            var toMove=document.getElementById("container");
-            toMove.style.backgroundPosition="0px "+window.cssYPos+"px";
-        }
-
-
-        function moveDown () {
-            window.cssYPos=window.cssYPos+2;
-
-            var toMove=document.getElementById("container");
-            toMove.style.backgroundPosition="0px "+window.cssYPos+"px";
-        }
-
         function moveRight () {
-            window.cssXPos=window.cssXPos-2;
-            var toMove=document.getElementById("container");
-            toMove.style.backgroundPosition=window.cssXPos+"px 0px";
+                    window.cssXPos=window.cssXPos-2;
+                    var toMove=document.getElementById("container");
+                    toMove.style.backgroundPosition=window.cssXPos+"px 0px";
         }
 
 
